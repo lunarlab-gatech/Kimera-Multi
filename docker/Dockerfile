@@ -74,7 +74,7 @@ RUN source $ROS_DIR/setup.bash && catkin build -c -s -j6
 WORKDIR ${WORKSPACE}/src/kimera_multi_lcd
 RUN pip install gdown
 RUN gdown 'https://drive.google.com/uc?export=download&confirm=9iBg&id=1N4y0HbgA3PHQ73ZxFJvy5dgvV_0cTBYF'
-RUN unzip vocab.zip
+RUN unzip -u vocab.zip
 
 WORKDIR /root
 
