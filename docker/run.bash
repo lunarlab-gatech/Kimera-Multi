@@ -10,9 +10,11 @@
 #    -- 10_14_acl_jackal2.bag
 #    -- etc.
 #
-DATASET_ROOT="/mnt/drive/Datasets/KimeraMulti_IROS23"
+DATASET_ROOT="/home/dbutterfield3/Desktop/Kimera-Multi/docker/docker_mounted_folder"
 
 docker run -it --rm --net=host \
   -v $(pwd)/volume:/root/volume \
   -v ${DATASET_ROOT}:/root/KimeraMulti_IROS23 \
+  -e "DISPLAY=$DISPLAY" \
+  -v "$HOME/.Xauthority:/root/.Xauthority:ro" \
   kimera-multi-deploy
